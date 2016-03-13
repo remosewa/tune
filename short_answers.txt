@@ -1,0 +1,25 @@
+1. What does O(n) mean? O(n^2)?
+    If n is the number of inputs your program takes, then in order for your program to return it must look at all n inputs if the runtime is O(n). Similarly
+    if the program takes O(n^2), then it must look at each input n times. I.e. O(n^2) with input of 9, must make 81 comparisons before returning.
+    Constants are disregarded, so O(2n) or O(n+91) reduce to just O(n). Also, big O only looks at the largest complexity. So if you have O(n + n^2), n^2 is bigger so it
+    reduces to O(n^2). Essentially, if you see a '+', just take the larger of the two.
+
+2. Describe the quick sort algorithm.
+   Quicksort sorts a list. So look at some random spot in your list and call this a 'pivot'. Create an index which points to the beginning of the list. We'll call this
+   this the 'separator'. Compare each spot in the list against your pivot, starting from the beginning of the list. If an item is smaller than the pivot, swap this item
+   with item at separator and move the separator forward so it points at the next element in the list. If it is greater, leave it as is. Finally swap pivot with the element
+   at the separator. The pivot is now in the correct location. So on one side of the separator, you have elements smaller than the pivot, and on the other you have elements
+   that are greater. You can repeat this sorting on each sublist to the left and right until all elements are sorted.
+
+3. In C, what is a pointer?
+   It's a variable that contains the memory address of the beginning of some object.
+
+4. What is the difference between Stack and Heap memory?
+   The stack contains variables which are used inside of a method, can only be referenced from within that method, and are discarded when that method returns. Heap values are 
+   are on the heap and are destructed either manually or through garbage collection at a later point in time.
+
+5. What is the purpose of a garbage collector?
+   To clean up objects which have are no longer accessible to your program. I.e. 
+   x = new Object(); //creates a new object in memory
+   x = new Object(); //creates another new object, but now we no longer have reference to our original object since we've reassigned x, so the garbage cleaner should free up
+   that unused space.
